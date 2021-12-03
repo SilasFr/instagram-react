@@ -17,14 +17,18 @@ function App() {
 			</div>
 
 			<div class="fundo-mobile">
-				<ion-icon name="home"></ion-icon>
-				<ion-icon name="search-outline"></ion-icon>
-				<ion-icon name="add-circle-outline"></ion-icon>
-				<ion-icon name="heart-outline"></ion-icon>
-				<ion-icon name="person-outline"></ion-icon>
+				<IonIcon name="home"></IonIcon>
+				<IonIcon name="search-outline"></IonIcon>
+				<IonIcon name="add-circle-outline"></IonIcon>
+				<IonIcon name="heart-outline"></IonIcon>
+				<IonIcon name="person-outline"></IonIcon>
 			</div>
 	</div>
 	)
+}
+
+export default function IonIcon(props){
+	return <ion-icon name={props.name}></ion-icon>
 }
 
 ReactDOM.render(<App />, document.querySelector('.root'))

@@ -1,8 +1,36 @@
 export default function Sidebar() {
+	const sugestions = [
+		{
+			userImage: "./assets/img/bad.vibes.memes.svg",
+			userName: 'bad.vibes.memes',
+			reason: 'Segue você',
+		},
+		{
+			userImage: "./assets/img/chibirdart.svg",
+			userName: 'chibirdart',
+			reason: 'Segue você',
+		},
+		{
+			userImage: "./assets/img/razoesparaacreditar.svg",
+			userName: 'razoesparaacreditar',
+			reason: 'Novo no Instagram',
+		},
+		{
+			userImage: "./assets/img/adorable_animals.svg",
+			userName: 'adorable_animals',
+			reason: 'Segue você',
+		},
+		{
+			userImage: "./assets/img/smallcutecats.svg",
+			userName: 'smallcutecats',
+			reason: 'Segue você',
+		}
+	]
+
 	return (
 		<div class="sidebar">
 			<div class="usuario">
-				<img src="../src/assets/img/catanacomics.svg" />
+				<img src="./assets/img/catanacomics.svg" />
 				<div class="texto">
 					<strong>catanacomics</strong>
 					Catana
@@ -15,67 +43,23 @@ export default function Sidebar() {
 					<div>Ver tudo</div>
 				</div>
 
-				<div class="sugestao">
-					<div class="usuario">
-						<img src="../src/assets/img/bad.vibes.memes.svg" />
-						<div class="texto">
-							<div class="nome">bad.vibes.memes</div>
-							<div class="razao">Segue você</div>
+				{sugestions.map((item)=>{
+					return(
+						<div class="sugestao">
+							<div class="usuario">
+								<img src={item.userImage} />
+								<div class="texto">
+									<div class="nome">{item.userName}</div>
+									<div class="razao">{item.reason}</div>
+								</div>
+							</div>
+
+							<div class="seguir">Seguir</div>
 						</div>
-					</div>
 
-					<div class="seguir">Seguir</div>
-				</div>
-
-				<div class="sugestao">
-					<div class="usuario">
-						<img src="../src/assets/img/chibirdart.svg" />
-						<div class="texto">
-							<div class="nome">chibirdart</div>
-							<div class="razao">Segue você</div>
-						</div>
-					</div>
-
-					<div class="seguir">Seguir</div>
-				</div>
-
-				<div class="sugestao">
-					<div class="usuario">
-						<img src="../src/assets/img/razoesparaacreditar.svg" />
-						<div class="texto">
-							<div class="nome">razoesparaacreditar</div>
-							<div class="razao">Novo no Instagram</div>
-						</div>
-					</div>
-
-					<div class="seguir">Seguir</div>
-				</div>
-
-				<div class="sugestao">
-					<div class="usuario">
-						<img src="../src/assets/img/adorable_animals.svg" />
-						<div class="texto">
-							<div class="nome">adorable_animals</div>
-							<div class="razao">Segue você</div>
-						</div>
-					</div>
-
-					<div class="seguir">Seguir</div>
-				</div>
-
-				<div class="sugestao">
-					<div class="usuario">
-						<img src="../src/assets/img/smallcutecats.svg" />
-						<div class="texto">
-							<div class="nome">smallcutecats</div>
-							<div class="razao">Segue você</div>
-						</div>
-					</div>
-
-					<div class="seguir">Seguir</div>
-				</div>
+					)})
+				}
 			</div>
-
 			<div class="links">
 				Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
 			</div>
