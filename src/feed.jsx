@@ -1,4 +1,4 @@
-import IonIcon from "./index"
+import IonIcon from "./Ionicon"
 
 export default function Feed() {
 	const posts = [
@@ -38,46 +38,52 @@ export default function Feed() {
 
 	return (
 		<div class="posts">
-			{posts.map((post)=>{
-				return(
-					<div class="post">
-						<div class="topo">
-							<div class="usuario">
-								<img src={post.userImage} />
-								{post.userName}
-							</div>
-							<div class="acoes">
-								<IonIcon name="ellipsis-horizontal"></IonIcon>
-							</div>
-						</div>
-
-						<div class="conteudo">
-							<img src= {post.content} />
-						</div>
-
-						<div class="fundo">
-							<div class="acoes">
-								<div>
-									<IonIcon name="heart-outline"></IonIcon>
-									<IonIcon name="chatbubble-outline"></IonIcon>
-									<IonIcon name="paper-plane-outline"></IonIcon>
-								</div>
-								<div>
-									<IonIcon name="bookmark-outline"></IonIcon>
-								</div>
-							</div>
-
-							<div class="curtidas">
-								<img src= {post.feedbackImage} />
-								<div class="texto">
-									Curtido por <strong>{post.feedbackHighlight}</strong> e <strong>{post.feedbackTotal}</strong>
-								</div>
-							</div>
-						</div>
-					</div>
+			{posts.map((post) => {
+				return (
+					<Post post={post} />
 
 				)
 			})}
+		</div>
+	)
+}
+
+function Post({ post }) {
+	return (
+		<div class="post">
+			<div class="topo">
+				<div class="usuario">
+					<img src={post.userImage} alt={post.userName}/>
+					{post.userName}
+				</div>
+				<div class="acoes">
+					<IonIcon name="ellipsis-horizontal"></IonIcon>
+				</div>
+			</div>
+
+			<div class="conteudo">
+				<img src={post.content} alt="foto do instagram"/>
+			</div>
+
+			<div class="fundo">
+				<div class="acoes">
+					<div>
+						<IonIcon name="heart-outline"></IonIcon>
+						<IonIcon name="chatbubble-outline"></IonIcon>
+						<IonIcon name="paper-plane-outline"></IonIcon>
+					</div>
+					<div>
+						<IonIcon name="bookmark-outline"></IonIcon>
+					</div>
+				</div>
+
+				<div class="curtidas">
+					<img src={post.feedbackImage} alt={post.feedbackHighlight}/>
+					<div class="texto">
+						Curtido por <strong>{post.feedbackHighlight}</strong> e <strong>{post.feedbackTotal}</strong>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

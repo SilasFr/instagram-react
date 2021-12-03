@@ -1,19 +1,21 @@
+import IonIcon from "./Ionicon"
+
 export default function Navbar() {
 	return (
 		<div class="navbar">
 			<div class="container">
 				<div class="logo">
-					<ion-icon name="logo-instagram"></ion-icon>
+					<IonIcon name="logo-instagram"></IonIcon>
 					<div class="separador"></div>
-					<img src="./assets/img/logo.png" />
+					<img src="./assets/img/logo.png" alt="logo"/>
 				</div>
 
 				<div class="logo-mobile">
-					<ion-icon name="logo-instagram"></ion-icon>
+					<IonIcon name="logo-instagram"></IonIcon>
 				</div>
 
 				<div class="instagram-mobile">
-					<img src="./assets/img/logo.png" />
+					<img src="./assets/img/logo.png" alt="logo"/>
 				</div>
 
 				<div class="pesquisa">
@@ -21,14 +23,14 @@ export default function Navbar() {
 				</div>
 
 				<div class="icones">
-					<ion-icon name="paper-plane-outline"></ion-icon>
-					<ion-icon name="compass-outline"></ion-icon>
-					<ion-icon name="heart-outline"></ion-icon>
-					<ion-icon name="person-outline"></ion-icon>
+					<IonIcon name="paper-plane-outline"></IonIcon>
+					<IonIcon name="compass-outline"></IonIcon>
+					<IonIcon name="heart-outline"></IonIcon>
+					<IonIcon name="person-outline"></IonIcon>
 				</div>
 
 				<div class="icones-mobile">
-					<ion-icon name="paper-plane-outline"></ion-icon>
+					<IonIcon name="paper-plane-outline"></IonIcon>
 				</div>
 			</div>
 		</div>

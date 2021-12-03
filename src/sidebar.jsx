@@ -30,7 +30,7 @@ export default function Sidebar() {
 	return (
 		<div class="sidebar">
 			<div class="usuario">
-				<img src="./assets/img/catanacomics.svg" />
+				<img src="./assets/img/catanacomics.svg" alt="Catana" />
 				<div class="texto">
 					<strong>catanacomics</strong>
 					Catana
@@ -43,21 +43,11 @@ export default function Sidebar() {
 					<div>Ver tudo</div>
 				</div>
 
-				{sugestions.map((item)=>{
-					return(
-						<div class="sugestao">
-							<div class="usuario">
-								<img src={item.userImage} />
-								<div class="texto">
-									<div class="nome">{item.userName}</div>
-									<div class="razao">{item.reason}</div>
-								</div>
-							</div>
-
-							<div class="seguir">Seguir</div>
-						</div>
-
-					)})
+				{sugestions.map((item) => {
+					return (
+						<Sugestion item={item} />
+					)
+				})
 				}
 			</div>
 			<div class="links">
@@ -67,6 +57,22 @@ export default function Sidebar() {
 			<div class="copyright">
 				© 2021 INSTAGRAM DO FACEBOOK
 			</div>
+		</div>
+	)
+}
+
+function Sugestion({ item }) {
+	return (
+		<div class="sugestao">
+			<div class="usuario">
+				<img src={item.userImage} alt={item.userName} />
+				<div class="texto">
+					<div class="nome">{item.userName}</div>
+					<div class="razao">{item.reason}</div>
+				</div>
+			</div>
+
+			<div class="seguir">Seguir</div>
 		</div>
 	)
 }
